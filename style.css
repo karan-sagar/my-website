@@ -1,0 +1,235 @@
+
+/* 1) Global reset */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+p:not(.text) {
+    margin: 0px;
+}
+
+/* 2) Remove default UL spacing */
+.nav-bar .socials .bi { font-size: 28px; line-height: 1; }
+
+/* 3) Ensure the bar spans edge-to-edge */
+.flex-container { 
+  display: flex;
+  flex-direction: column;
+  margin: 0; 
+  padding: 0; 
+ }
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 0 32px;    /* side padding */
+  height: 80px;       /* your desired bar height */
+  width: 100%; 
+  position: sticky;
+  top: 0;
+}
+
+.nav-bar { 
+  display: flex; 
+  gap: 32px; 
+  margin: 0;          
+  padding: 0;          
+  list-style: none;
+  
+}
+
+.nav-bar-item, a {
+    color: white;
+    font-family: "Palatino Linotype";
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+  } 
+
+.nav-bar-item:hover, .dropdown:hover{
+    opacity: 50%;
+  }
+
+li.dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;                 /* hidden by default */
+    position: absolute;            /* popover */
+    top: 100%;                     /* below trigger */
+    left: 0;
+    background: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+    z-index: 999;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #111;
+  }
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+#about-me{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+.name{
+    margin:0;
+    text-align: center;
+    font-family: "Caveat";
+    font-weight: 600;
+    font-synthesis: none;
+    line-height: 1.1; /* unitless is best */
+    font-size: min(200px, 16vw);
+  }
+
+
+.headings{
+    font-size: min(50px, 6vw);
+    font-weight: 600;
+  }
+
+
+.text, .project{
+    font-size: min(25px, 4vw);
+    line-height: 1.3;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+  }
+
+  #experience, #projects{
+    margin-left: 10%;
+    margin-right: 10%;
+
+  }
+
+  .timeline{
+    font-size: min(23px, 4vw);
+    line-height: 1.3;
+  }
+
+  .divider {
+    width: 100%;
+    height: 5px;
+    background-color: #e2e2e2;
+    margin: 4rem 0;
+  }
+
+  .project-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+    align-items: stretch; /* ensure equal heights */
+    align-content: center;
+ }
+
+ .desc{
+    font-size: 3vw;
+    text-align: center;
+ }
+
+ .img-box {
+    width: 100%;
+    aspect-ratio: 2 / 1; /* makes a perfect square box */
+    overflow: hidden;
+  }
+
+  .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keeps full image, no stretch */
+    display: block;
+  }
+
+  .img-box:hover{
+    opacity: 50%
+  }
+
+
+
+/* Default: mobile */
+.full-size-content {
+    display: none;
+  }
+  
+  
+  /* Desktop view */
+  @media (min-width: 845px) {
+    .dropdown {
+      display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+      }
+  
+    .full-size-content {
+        display: flex; 
+        gap: 32px; 
+        margin: 0;          
+        padding: 0;          
+        list-style: none;
+    }
+
+    .project-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+        align-items: stretch; /* ensure equal heights */
+        align-content: center;
+     }
+
+     .desc{
+        font-size: 1.8vw;
+        text-align: center;
+     }
+    
+     .img-box {
+        width: 100%;
+        aspect-ratio: 1 / 1; /* makes a perfect square box */
+        overflow: hidden;
+      }
+    
+      .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* keeps full image, no stretch */
+        display: block;
+      }
+    
+      .img-box:hover{
+        opacity: 50%
+      }
+
+  }
