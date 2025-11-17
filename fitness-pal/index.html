@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight & Nutrition Charts</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Danfo.js (browser bundle, exposes global "dfd") -->
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@1.1.2/lib/bundle.min.js"></script>
+
+    <!-- Your JS -->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <h1>Upload Your MyFitnessPal CSVs</h1>
+
+    <p>
+        <b>About:</b>
+        I created this website for me to track how my weight is changing over time. Due to daily fluctuations, it can be sometimes hard to notice an overall trend
+        so that's why I added the 7-day rolling average. It reduces the noise in the data and shows the overall trajectory. 
+    </p>
+
+    <p>
+       To use this, simply click on the upload button below and select the files provided by MyFitnessPal. All data is handled on the client side and none is saved on the backend. 
+    </p>
+    
+    <!-- Global range filter -->
+    <div class="filter-bar">
+        <label for="rangeFilter">Show:</label>
+        <select id="rangeFilter">
+            <option value="all">All data</option>
+            <option value="30">Last 30 days</option>
+            <option value="15">Last 15 days</option>
+        </select>
+    </div>
+
+    <!-- Hidden file inputs -->
+    <input 
+        type="file" 
+        id="weightFileInput" 
+        accept=".csv" 
+        style="display:none"
+    />
+    <input 
+        type="file" 
+        id="nutritionFileInput" 
+        accept=".csv" 
+        style="display:none"
+    />
+
+    <!-- Two side-by-side sections -->
+    <div class="charts-wrapper">
+
+        <!-- LEFT: Weight section -->
+        <div class="chart-section">
+            <div class="controls">
+                <button id="uploadWeight">Upload Weight CSV</button>
+                <button id="uploadWeightBtn" style="display:none;">
+                    No file uploaded
+                </button>
+            </div>
+
+            <div class="chart-box">
+                <canvas id="weightChart"></canvas>
+            </div>
+        </div>
+
+        <!-- RIGHT: Nutrition section -->
+        <div class="chart-section">
+            <div class="controls">
+                <button id="uploadNutrition">Upload Nutrition CSV</button>
+                <button id="uploadNutritionBtn" style="display:none;">
+                    No file uploaded
+                </button>
+            </div>
+
+            <div class="chart-box">
+                <canvas id="nutritionChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <p>
+        The nutrition csv export from MyFitnessPal does provide additonal data about other vitamins. If you would like any features added, you can reach out to me at karan.sagar@outlook.com. 
+     </p>
+
+     <p>Sample of what the visualizations should look like: <a href="images/SampleData.png" target="_blank" rel="noopener noreferrer">
+        view here
+      </a>
+     </p>
+
+</body>
+</html>
+
+
+

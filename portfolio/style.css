@@ -158,13 +158,13 @@ li.dropdown {
     text-align: center;
  }
 
- .img-box {
+ .img-box a{
     width: 100%;
     aspect-ratio: 2 / 1; /* makes a perfect square box */
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
-  .img-box img {
+  .img-box a img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* keeps full image, no stretch */
@@ -203,7 +203,7 @@ li.dropdown {
 
     .project-grid{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         column-gap: 2rem;
         row-gap: 1.5rem;
         align-items: stretch; /* ensure equal heights */
@@ -215,13 +215,13 @@ li.dropdown {
         text-align: center;
      }
     
-     .img-box {
+     .img-box a {
         width: 100%;
         aspect-ratio: 1 / 1; /* makes a perfect square box */
         overflow: hidden;
       }
     
-      .img-box img {
+      .img-box img a {
         width: 100%;
         height: 100%;
         object-fit: contain; /* keeps full image, no stretch */
